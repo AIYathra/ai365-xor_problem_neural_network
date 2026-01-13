@@ -90,7 +90,7 @@ By completing this project, learn:
 This is a perfect stepping stone toward deeper neural network concepts and embedded AI.
 
 
-## Learning Resources
+## 📚 Learning Resources
 New to neural networks? Check out our detailed tutorial!
 📚 **[Line-by-Line Tutorial](xor_tutorial_line_by_line.md)** - Perfect for beginners! Every line of code explained in simple terms.
 
