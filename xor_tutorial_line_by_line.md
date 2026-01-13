@@ -26,7 +26,7 @@
 ```python
 from tensorflow import keras
 from keras.models import Sequential
-from keras.layers.core import Dense
+from keras.layers import Dense
 import tensorflow as tf
 import numpy as np
 ```
@@ -57,7 +57,7 @@ from keras.models import Sequential
 "From Keras, get me Sequential" - This is like getting a blueprint for building an AI brain layer by layer (like stacking pancakes)
 
 ```python
-from keras.layers.core import Dense
+from keras.layers import Dense
 ```
 "Get me Dense" - This is a type of layer (pancake) you'll stack. "Dense" means all parts are connected to each other, like a spider web.
 
