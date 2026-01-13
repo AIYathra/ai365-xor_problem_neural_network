@@ -69,7 +69,6 @@ Example output:
 
 (Rounded → `[[0], [1], [1], [0]]`)
 
----
 
 ## 📦 TensorFlow Lite Conversion
 
