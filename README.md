@@ -1,31 +1,95 @@
-🧠 ai365-xor_problem_neural_network
-🔍 Overview
-This repository explores the classic XOR problem — a foundational challenge in neural network history — and demonstrates how a simple multi-layer perceptron (MLP) can solve it using non-linear activation functions.
+# 🧠 XOR Neural Network — Solving the Classic Non‑Linear Problem
 
-🎯 What’s Inside
-A minimal Keras/TensorFlow model that learns the XOR truth table.
+A minimal, hands‑on implementation of the XOR problem using a simple neural network built with TensorFlow/Keras. This project demonstrates how non‑linear activation functions and a hidden layer enable a model to learn a function that a single‑layer perceptron cannot solve.
 
-Visualizations of input/output mappings and decision boundaries.
 
-Deployment-ready code for running the trained model on a microcontroller using TensorFlow Lite Micro (TinyML).
+## 🚀 Project Overview
 
-Commentary on why XOR is not linearly separable and how hidden layers enable learning.
+The XOR (exclusive OR) problem is historically important in the evolution of neural networks. It represents the simplest example of a **non‑linearly separable** function — meaning it cannot be solved by a linear classifier.
 
-🚀 Goals
-Understand the limitations of single-layer perceptrons.
+This repository walks through:
 
-Implement a working neural network that solves XOR.
+- Building the XOR dataset  
+- Designing a small neural network with a hidden layer  
+- Training the model to learn XOR  
+- Testing predictions  
+- Converting the trained model into TensorFlow Lite format  
 
-Prepare the model for edge deployment on resource-constrained devices.
+This project is intentionally simple and ideal for beginners who want to understand *why* neural networks need non‑linearity and hidden layers.
 
-📦 Files
-xor_model.ipynb: Training and evaluation notebook.
 
-model.tflite: Quantized model for microcontroller inference.
+## 📂 Repository Structure
 
-README.md: Explanation of the problem, architecture, and results.
+ai365-xor_problem_neural_network/
+```text
+├── Xor.ipynb              # Jupyter Notebook with full implementation
+├── converted_model.tflite # Exported TensorFlow Lite model
+└── README.md              # Project documentation
+```
 
-visuals/: Diagrams and plots showing how the network separates XOR inputs.
 
-📚 Learning Outcome
-Solving XOR is more than a coding exercise — it’s a gateway to understanding non-linearity, activation functions, and the power of hidden layers. This repo sets the stage for deeper neural network experiments in AI365.
+## 🧩 The XOR Dataset
+
+The XOR truth table:
+
+| Input (x1, x2) | Output |
+|----------------|--------|
+| (0, 0)         |   0    |
+| (0, 1)         |   1    |
+| (1, 0)         |   1    |
+| (1, 1)         |   0    |
+
+This dataset cannot be separated by a straight line, which is why a hidden layer is required.
+
+
+## 🏗️ Model Architecture
+
+The neural network used in this project:
+
+- **Input layer:** 2 features  
+- **Hidden layer:** 2 neurons, `tanh` activation  
+- **Output layer:** 1 neuron, `sigmoid` activation  
+- **Loss:** Binary cross‑entropy  
+- **Optimizer:** Adam  
+
+This minimal architecture is sufficient to learn the XOR mapping.
+
+
+## 🏃 Training
+
+The model is trained for 10,000 epochs with batch size 1.  
+After training, the network correctly predicts the XOR outputs.
+
+Example output:
+[[0.01]
+[0.98]
+[0.97]
+[0.02]]
+
+
+(Rounded → `[[0], [1], [1], [0]]`)
+
+---
+
+## 📦 TensorFlow Lite Conversion
+
+The trained Keras model is converted into a `.tflite` file using:
+
+```python
+converter = tf.lite.TFLiteConverter.from_keras_model(model)
+tflite_model = converter.convert()
+```
+This enables deployment on microcontrollers or edge devices.
+
+
+## 🎯 Learning Outcome
+By completing this project, learn:
+- Why XOR is a foundational problem in neural network history
+- How hidden layers and non‑linear activations enable complex decision boundaries
+- How to build, train, and test a neural network in TensorFlow/Keras
+- How to export a model to TensorFlow Lite
+This is a perfect stepping stone toward deeper neural network concepts and embedded AI.
+
+
+## 📘 Educational Purpose
+This repository is created purely for educational and learning purposes. It is designed to help beginners understand the fundamentals of neural networks through the classic XOR problem.
